@@ -1,29 +1,133 @@
+/* --- SEÇÃO DO FORMULÁRIO ATUALIZADA --- */
+
 .form-section {
   padding: 120px 0;
   background-color: #f4f1ea; /* Fundo Bege unificado */
 }
 
-.form-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
 .form-container {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 50px;
-  max-width: 1100px;
+  grid-template-columns: 1fr 400px; /* Aumentado levemente a sidebar */
+  gap: 60px;
+  max-width: 1200px; /* Aumentado para dar mais presença */
   margin: 0 auto;
+  align-items: start;
 }
 
-/* ESTILO DO FORMULÁRIO */
+/* ESTILO DO FORMULÁRIO - MAIS PROFISSIONAL */
 .form-content {
   background-color: #ffffff;
-  border-radius: 40px;
-  padding: 60px;
-  box-shadow: 0 20px 50px rgba(139, 115, 85, 0.05);
+  border-radius: 20px; /* Bordas um pouco menos arredondadas para ar mais sóbrio */
+  padding: 70px; /* Mais espaço interno */
+  
+  /* A BORDA BEGE QUE VOCÊ PEDIU */
+  border: 2px solid #e8e4db; 
+  
+  /* Sombra mais sofisticada e leve */
+  box-shadow: 0 15px 40px rgba(139, 115, 85, 0.08);
+  transition: transform 0.3s ease;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Aumentado o espaço entre campos */
+}
+
+.form-group label {
+  font-size: 0.75rem; /* Menor e mais espaçado = mais elegante */
+  font-weight: 700;
+  color: #8b7355;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.form-input, .form-select, .form-textarea {
+  background-color: #fdfcfb;
+  border: 1.5px solid #eeebe3; /* Borda inicial mais clara */
+  border-radius: 8px; /* Cantos mais modernos */
+  padding: 20px 25px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #4a3f35;
+  width: 100%;
+}
+
+/* Efeito de Foco Profissional */
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #8b7355;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(139, 115, 85, 0.1);
+}
+
+.form-select {
+  /* ... suas outras propriedades ... */
+  
+  width: 100% !important;      /* Garante que ocupe toda a largura */
+  max-width: 100%;             /* Evita que ele transborde o card */
+  appearance: none;            /* Remove o estilo padrão do navegador */
+  -webkit-appearance: none;    /* Para Safari/Chrome no iOS */
+  -moz-appearance: none;       /* Para Firefox */
+  
+  /* Adiciona uma setinha personalizada já que o appearance:none remove a padrão */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b7355' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 14px;
+  
+  padding-right: 45px !important; /* Espaço para a setinha não sobrepor o texto */
+  text-overflow: ellipsis;        /* Se o texto for muito longo, ele coloca "..." */
+  white-space: nowrap;
+}
+
+.form-select:invalid,
+.form-select option[value=""] {
+    color: #a0a0a0; /* Cor de placeholder */
+}
+
+/* Garante que as opções reais tenham a cor normal do formulário */
+.form-select option {
+    color: #4a3f35;
+    background-color: #fff;
+}
+
+/* BOTÃO SUBMIT REFINADO */
+.submit-btn {
+  background-color: #8b7355;
+  color: white;
+  border: none;
+  padding: 22px;
+  border-radius: 8px; /* Alinhado com o estilo dos inputs */
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #4a3f35; /* Escurece para um tom mais sério */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(74, 63, 53, 0.2);
+}
+
+/* AJUSTE PARA MOBILE */
+@media (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+  }
+  
+  .form-content {
+    padding: 40px 25px;
+  }
+}
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -233,60 +337,46 @@
 }
 
 /* Mobile - Para ocupar a tela inteira */
+/* AJUSTE PARA MOBILE REFINADO */
 @media (max-width: 480px) {
   .form-section {
     padding: 40px 0;
-    /* Garante que a seção use flex para centralizar o que estiver dentro */
-    display: flex;
-    justify-content: center;
   }
 
   .form-container {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center; /* Centraliza o card branco horizontalmente */
-    width: 100% !important;
-    max-width: 100%;
-    padding: 0 15px; /* Respiro lateral para o card não colar na tela */
-    margin: 0 auto !important;
+    padding: 0 10px;
   }
 
-  .form-content { 
-    width: 100% !important;
-    max-width: 400px; /* Mantém o tamanho original que você gostava */
-    padding: 30px 20px !important;
-    border-radius: 30px; 
-    box-sizing: border-box;
-    margin: 0 auto !important; /* Força a centralização */
-    float: none !important; /* Remove qualquer desvio lateral */
+  .form-content {
+    padding: 30px 15px !important; /* Reduzi o padding lateral para ganhar espaço interno */
+    border-radius: 20px;
   }
 
-  /* Ajuste dos campos internos */
-  .form-group label {
-    text-align: left;
-    margin-bottom: 8px;
-    font-size: 0.8rem;
-    display: block;
-  }
-
+  /* RESOLUÇÃO DO TEXTO CORTADO */
   .form-input, .form-select, .form-textarea {
+    padding: 15px 12px !important; /* Diminuído padding interno para o texto não ser expulso */
+    font-size: 0.9rem !important;  /* Fonte levemente menor para caber textos longos */
     width: 100% !important;
-    padding: 15px;
     box-sizing: border-box;
   }
 
-  /* Botão menor e centralizado conforme pedido */
-  .submit-btn {
-    width: 100% !important; /* Ocupa a largura interna do card */
-    max-width: 280px; /* Limita a largura para não ficar gigante */
-    margin: 20px auto 0 !important; /* Centraliza o botão dentro do card */
-    padding: 15px 20px !important;
-    font-size: 0.9rem !important;
-    display: block !important;
+  /* Ajuste específico para o Select no Mobile */
+  .form-select {
+    background-position: right 10px center !important; /* Move a setinha mais para a borda */
+    padding-right: 30px !important; 
+    white-space: normal !important; /* Permite que o texto quebre linha se necessário (depende do navegador) */
+    line-height: 1.2;
   }
 
-  .form-row { 
-    grid-template-columns: 1fr !important; 
-    gap: 15px; 
+  /* Ajuste das opções internas para alguns navegadores mobile */
+  .form-select option {
+    font-size: 0.85rem;
+  }
+
+  .submit-btn {
+    width: 100% !important;
+    max-width: none !important; /* No mobile, botão full-width é mais profissional */
+    padding: 18px !important;
+    font-size: 0.9rem !important;
   }
 }

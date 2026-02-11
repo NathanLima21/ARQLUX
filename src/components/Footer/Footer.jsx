@@ -85,7 +85,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container bottom-flex">
           <p className="copyright">
-            &copy; {new Date().getFullYear()} ARC Arquitetura. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} LP CONVERT. Todos os direitos reservados.
           </p>
           <div className="footer-legal">
             <a href="#">Privacidade</a>

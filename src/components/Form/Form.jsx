@@ -80,6 +80,7 @@ const Form = () => {
           <span className="section-tag">Contato</span>
           <h2 className="section-title">Vamos criar o <span className="highlight">extraordinário</span>?</h2>
           <p className="form-subtitle">Preencha os detalhes abaixo e receba uma consultoria inicial exclusiva.</p>
+          <br></br>
         </div>
 
         <div className="form-container">
@@ -103,11 +104,22 @@ const Form = () => {
 
               <div className="form-group">
                 <label>Tipo de Projeto *</label>
-                <select name="tipoProjeto" value={formData.tipoProjeto} onChange={handleChange} required className="form-select">
-                  {projectTypes.map((type) => (
-                    <option key={type.value} value={type.value}>{type.label}</option>
-                  ))}
-                </select>
+                <select 
+  name="tipoProjeto" 
+  value={formData.tipoProjeto} 
+  onChange={handleChange} 
+  required 
+  className="form-select"
+>
+  {/* Esta opção atua como o placeholder */}
+  <option value="" disabled hidden>Selecione o tipo de projeto</option>
+  
+  {projectTypes.filter(type => type.value !== '').map((type) => (
+    <option key={type.value} value={type.value}>
+      {type.label}
+    </option>
+  ))}
+</select>
               </div>
 
               <div className="form-group">
