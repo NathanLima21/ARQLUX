@@ -1,0 +1,174 @@
+.about {
+  background-color: #f4f1ea; /* Mantendo o Bege Areia para continuidade */
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* ================= LADO DA IMAGEM ================= */
+.about-image-wrapper {
+  position: relative;
+}
+
+.main-image {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.about-image-wrapper:hover .main-image img {
+  transform: scale(1.05);
+}
+
+/* Card flutuante que dá o ar premium */
+.floating-card {
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  background: #111;
+  color: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.experience-year {
+  font-size: 3.5rem;
+  font-family: "Playfair Display", serif;
+  color: #8b7355; /* Bronze */
+  line-height: 1;
+}
+
+.floating-card p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+/* ================= CONTEÚDO TEXTUAL ================= */
+.about-tag {
+  color: #8b7355;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.about-title .highlight {
+  font-style: italic;
+  font-weight: 400;
+  color: #8b7355;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  color: #111;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8b7355;
+  margin-top: 5px;
+}
+
+.about-quote {
+  padding-left: 30px;
+  border-left: 2px solid #8b7355;
+  font-style: italic;
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    order: 2; /* Imagem embaixo no mobile */
+  }
+
+  .main-image {
+    height: 450px;
+  }
+
+  .floating-card {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -30px;
+    padding: 30px;
+  }
+
+  .about-stats {
+    justify-content: center;
+  }
+
+  .about-quote {
+    border-left: none;
+    border-top: 2px solid #8b7355;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+}

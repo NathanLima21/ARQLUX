@@ -1,0 +1,196 @@
+/* ================= GLOBAL / BACKGROUND ================= */
+.hero-section {
+  width: 100%;
+  background: #f4f1ea; /* Bege Areia Premium */
+  overflow-x: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ================= IMAGE SIDE (FLUTUANTE & ARREDONDADA) ================= */
+.hero-image-side {
+  position: relative;
+  height: 85vh;
+  margin: 30px;
+  overflow: hidden;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero-image-side:hover img {
+  transform: scale(1.1);
+}
+
+/* ================= TEXT SIDE ================= */
+.hero-text-side {
+  display: flex;
+  align-items: center;
+  padding: 60px 80px;
+}
+
+/* ================= TAG/BOTÃO BEGE PREMIUM ================= */
+.hero-tag {
+  background: #8b7355; /* O tom bege/bronze premium estabelecido */
+  color: #ffffff;      /* Texto em branco para melhor leitura sobre o bege */
+  padding: 10px 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+  display: inline-block;
+  border-radius: 50px; /* Mantém o estilo pílula arredondado */
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(139, 115, 85, 0.15); /* Sombra suave no mesmo tom */
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+.highlight {
+  color: #8b7355;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* ================= BOTÕES PREMIUM (SEM LISTRAS/BRILHOS) ================= */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-black, .btn-whatsapp {
+  position: relative;
+  text-decoration: none;
+  padding: 22px 35px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  border: none;
+}
+
+/* Botão Orçamento - Agora em Bege Premium */
+.btn-black {
+  background: #8b7355; /* Tom Bege/Bronze das imagens */
+  color: white;
+  box-shadow: 0 10px 20px rgba(139, 115, 85, 0.2);
+}
+
+.btn-black:hover {
+  background: #705d45; /* Tom um pouco mais escuro no hover */
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(139, 115, 85, 0.3);
+}
+
+/* Botão WhatsApp - Mantendo o padrão ou suavizando */
+.btn-whatsapp {
+  background: #25d366;
+  color: white;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp:hover {
+  background: #20ba5a; 
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+  background: #25d366;
+  color: white;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp:hover {
+  background: #20ba5a; 
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+}
+
+/* ================= RESPONSIVO (TEXTO NO TOPO / IMAGEM EMBAIXO) ================= */
+/* ================= RESPONSIVO AJUSTADO ================= */
+@media (max-width: 1024px) {
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    min-height: auto; /* Permite que a seção cresça conforme o conteúdo */
+  }
+
+  .hero-text-side {
+    order: 1;
+    padding: 80px 25px 40px; /* Mais espaço no topo para a Navbar */
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-image-side {
+    order: 2;
+    /* Aqui está o segredo: usamos min-height e um valor menor que 70vh 
+       para não quebrar em telas de celulares pequenos */
+    height: 60vh; 
+    min-height: 400px; 
+    width: calc(100% - 30px);
+    margin: 0 auto 50px; 
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image-side img {
+    object-position: center 20%; /* Foca na parte superior/meio da casa */
+  }
+
+  .hero-title {
+    font-size: 2.2rem; /* Título levemente menor para caber melhor */
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    max-width: 320px; /* Botões um pouco mais finos no mobile */
+    margin: 0 auto;
+  }
+}

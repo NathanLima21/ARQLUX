@@ -1,0 +1,127 @@
+.whatsapp-fixed-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 12px;
+}
+
+.whatsapp-label-simple {
+  background-color: #ffffff;
+  color: #4a3f35;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(139, 115, 85, 0.1);
+}
+
+.whatsapp-icon-circle {
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover .whatsapp-icon-circle {
+  transform: scale(1.1);
+}
+
+/* Container fixo no canto da tela */
+.wa-float-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.wa-main-button {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; /* Ícone na direita, texto na esquerda */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.wa-icon-box {
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  position: relative;
+  z-index: 5; /* Garante que o ícone fique por cima de tudo */
+  transition: transform 0.3s ease;
+}
+
+.wa-hover-text {
+  background-color: #ffffff;
+  color: #4a3f35;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  /* Arredondado só na esquerda */
+  border-radius: 30px 0 0 30px;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+  
+  /* ESCONDIDO POR PADRÃO */
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+  transition: all 0.4s ease;
+  
+  /* Ajuste de posição para brotar de trás do ícone */
+  transform: translateX(30px); 
+  z-index: 1;
+}
+
+/* --- EFEITO HOVER (Quando passa o mouse) --- */
+.wa-main-button:hover .wa-hover-text {
+  max-width: 200px;
+  opacity: 1;
+  padding: 12px 35px 12px 20px;
+  transform: translateX(10px); /* Empurra para a esquerda do ícone */
+}
+
+.wa-main-button:hover .wa-icon-box {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .wa-hover-text { display: none; } /* No mobile só o ícone */
+}
+
+/* Ocultar texto em telas muito pequenas se necessário */
+@media (max-width: 480px) {
+  .whatsapp-label-simple {
+    display: none;
+  }
+}

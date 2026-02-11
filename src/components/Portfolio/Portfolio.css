@@ -1,0 +1,150 @@
+.portfolio {
+  background-color: #f4f1ea; /* Fundo Bege Areia para manter a unidade */
+  padding: 120px 0;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ESSENCIAL para a foto preencher o card sem deformar */
+  display: block;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-tag {
+  color: #8b7355;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.title-underline {
+  width: 60px;
+  height: 3px;
+  background: #8b7355;
+  margin: 0 auto;
+}
+
+/* GRID */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* CARDS */
+.portfolio-item {
+  background-color: #fff;
+  border-radius: 30px; /* Bordas arredondadas como na Hero */
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(139, 115, 85, 0.15);
+}
+
+/* IMAGEM */
+.portfolio-image {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.1);
+}
+
+/* OVERLAY NA IMAGEM */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+}
+
+.portfolio-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-content h3 {
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+}
+
+.project-type {
+  color: #8b7355;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* INFO ABAIXO DA IMAGEM */
+.portfolio-info {
+  padding: 30px;
+}
+
+.portfolio-description {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #f4f1ea;
+  color: #8b7355;
+  padding: 6px 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  .portfolio-image {
+    height: 300px;
+  }
+}

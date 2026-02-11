@@ -1,0 +1,177 @@
+.testimonials {
+  padding: 120px 0;
+  /* Bege um pouco mais escuro que o anterior para destacar os cards */
+  background-color: #ece9e1; 
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.testimonials-slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ================= CONTROLES ================= */
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  right: -100px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.slider-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #111;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.slider-btn:hover {
+  background-color: #8b7355;
+  color: #ffffff;
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* ================= CARD ================= */
+.testimonials-track {
+  overflow: hidden;
+  border-radius: 40px; /* Mantendo o padrão de bordas do portfolio */
+}
+
+.testimonials-inner {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 60px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04);
+}
+
+.quote-icon {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  color: #8b7355;
+  opacity: 0.15;
+}
+
+.quote-icon svg {
+  width: 80px;
+  height: 80px;
+}
+
+.testimonial-quote {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 25px;
+}
+
+/* ================= FOOTER DO CARD ================= */
+.testimonial-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid #f4f1ea;
+}
+
+.client-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.client-project {
+  font-size: 0.9rem;
+  color: #8b7355;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.client-location {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 600;
+  padding: 10px 20px;
+  background-color: #f4f1ea;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+/* ================= DOTS ================= */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(139, 115, 85, 0.2); /* Bronze clarinho */
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0;
+}
+
+.dot.active {
+  background-color: #8b7355; /* Bronze sólido */
+  width: 35px; /* Efeito de pílula moderno */
+  border-radius: 20px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 1024px) {
+  .slider-controls { display: none; }
+  .testimonial-card { padding: 40px; }
+  .testimonial-quote { font-size: 1.2rem; }
+}
+
+@media (max-width: 640px) {
+  .testimonial-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,136 @@
+/* ================= ESTRUTURA BASE ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  z-index: 2000;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: transparent;
+}
+
+.navbar.scrolled {
+  height: 75px;
+  background: rgba(244, 241, 234, 0.98); /* Bege Areia */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+}
+
+.nav-logo .highlight {
+  color: #8b7355; /* Bronze da marca */
+}
+
+/* ================= LINKS DO MENU ================= */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Efeito de linha nos links comuns (Início, Projetos, Contato) */
+.nav-item a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: -4px;
+  left: 0;
+  background-color: #8b7355;
+  transition: width 0.3s ease;
+}
+
+.nav-item a:hover:not(.nav-cta)::after {
+  width: 100%;
+}
+
+.nav-item a:hover:not(.nav-cta) {
+  color: #8b7355;
+}
+
+/* ================= BOTÃO DE ORÇAMENTO (DESIGN PREMIUM) ================= */
+.nav-cta {
+  background: #8b7355 !important; /* Cor bronze solicitada */
+  color: #ffffff !important;
+  padding: 14px 28px;
+  border-radius: 50px;
+  box-shadow: 0 8px 15px rgba(139, 115, 85, 0.2);
+  transition: all 0.4s ease !important;
+  border: none !important;
+}
+
+.nav-cta:hover {
+  background: #766148 !important; /* Bronze mais profundo no hover */
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(139, 115, 85, 0.3);
+}
+
+/* ================= MOBILE ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 28px;
+  height: 2px;
+  background: #111;
+  transition: 0.4s;
+}
+
+@media (max-width: 1024px) {
+  .hamburger { display: flex; }
+  
+  .nav-menu {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #f4f1ea;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    z-index: -1;
+  }
+
+  .nav-menu.active { top: 0; }
+  .nav-item a { font-size: 1.3rem; }
+  
+  .hamburger.open .line:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .hamburger.open .line:nth-child(2) { opacity: 0; }
+  .hamburger.open .line:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+}

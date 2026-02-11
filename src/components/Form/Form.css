@@ -1,0 +1,292 @@
+.form-section {
+  padding: 120px 0;
+  background-color: #f4f1ea; /* Fundo Bege unificado */
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ESTILO DO FORMULÁRIO */
+.form-content {
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 60px;
+  box-shadow: 0 20px 50px rgba(139, 115, 85, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8b7355;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input, .form-select, .form-textarea {
+  background-color: #fbfaf8;
+  border: 1px solid #e8e4db;
+  border-radius: 15px;
+  padding: 18px 25px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #4a3f35;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #8b7355;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(139, 115, 85, 0.05);
+}
+
+/* BOTÃO SUBMIT */
+.submit-btn {
+  background-color: #8b7355;
+  color: white;
+  border: none;
+  padding: 22px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background-color: #6f5c44;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(111, 92, 68, 0.2);
+}
+
+/* SIDEBAR */
+.form-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidebar-card {
+  background-color: #ece9e1; /* Bege destaque */
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.sidebar-title {
+  font-family: "Playfair Display", serif;
+  color: #4a3f35;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-list li {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.sidebar-list strong { color: #8b7355; }
+
+/* WHATSAPP CARD */
+/* WHATSAPP CARD - ATUALIZADO */
+.whatsapp-card {
+  background-color: #ece9e1; /* Fundo bege para destacar o botão verde */
+  border-radius: 30px;
+  padding: 40px;
+  color: #4a3f35; /* Texto em bronze escuro */
+  text-align: center;
+  border: 1px solid rgba(139, 115, 85, 0.1);
+}
+
+.whatsapp-card h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.whatsapp-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.btn-wa-direct {
+  background-color: #25D366; /* Verde oficial WhatsApp */
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+.btn-wa-direct:hover {
+  background-color: #20ba5a;
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* Estilo para o ícone do Lucide (ou SVG) dentro do botão */
+.btn-wa-direct svg {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+}
+
+.btn-wa-direct:hover {
+  transform: scale(1.05);
+}
+
+/* SUCCESS STATE */
+.success-message {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.success-icon {
+  color: #8b7355;
+  margin-bottom: 30px;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.btn-back {
+  margin-top: 30px;
+  background: transparent;
+  color: #8b7355;
+  border: 1.5px solid #8b7355;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #8b7355;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+/* ... seu código anterior ... */
+
+/* MOBILE - AJUSTADO PARA CENTRALIZAÇÃO */
+/* Tablet e telas médias */
+@media (max-width: 1024px) {
+  .form-container { 
+    grid-template-columns: 1fr; 
+    max-width: 95%; 
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile - Para ocupar a tela inteira */
+@media (max-width: 480px) {
+  .form-section {
+    padding: 40px 0;
+    /* Garante que a seção use flex para centralizar o que estiver dentro */
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center; /* Centraliza o card branco horizontalmente */
+    width: 100% !important;
+    max-width: 100%;
+    padding: 0 15px; /* Respiro lateral para o card não colar na tela */
+    margin: 0 auto !important;
+  }
+
+  .form-content { 
+    width: 100% !important;
+    max-width: 400px; /* Mantém o tamanho original que você gostava */
+    padding: 30px 20px !important;
+    border-radius: 30px; 
+    box-sizing: border-box;
+    margin: 0 auto !important; /* Força a centralização */
+    float: none !important; /* Remove qualquer desvio lateral */
+  }
+
+  /* Ajuste dos campos internos */
+  .form-group label {
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    display: block;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100% !important;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  /* Botão menor e centralizado conforme pedido */
+  .submit-btn {
+    width: 100% !important; /* Ocupa a largura interna do card */
+    max-width: 280px; /* Limita a largura para não ficar gigante */
+    margin: 20px auto 0 !important; /* Centraliza o botão dentro do card */
+    padding: 15px 20px !important;
+    font-size: 0.9rem !important;
+    display: block !important;
+  }
+
+  .form-row { 
+    grid-template-columns: 1fr !important; 
+    gap: 15px; 
+  }
+}
