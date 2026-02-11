@@ -1,6 +1,7 @@
+/* ================= SEÇÃO DE DIFERENCIAIS (FEATURES) ================= */
 .features {
   padding: 120px 0;
-  background-color: #f4f1ea; /* Fundo Bege Areia unificado */
+  background-color: #f4f1ea; /* Fundo Bege Areia */
   position: relative;
 }
 
@@ -41,79 +42,95 @@
   margin-top: 20px;
 }
 
-/* GRID */
+/* GRID COM ALTURA IGUAL */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  align-items: stretch; /* Garante que todos os cards na mesma linha tenham a mesma altura */
 }
 
-/* CARDS */
+/* CARDS PREMIUM */
 .feature-card {
   background: #ffffff;
-  border-radius: 30px; /* Seguindo o padrão das imagens do portfolio */
+  border-radius: 30px;
   padding: 50px 40px;
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid rgba(139, 115, 85, 0.1); /* Borda bronze quase invisível */
+  border: 1px solid rgba(139, 115, 85, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100%; /* O card ocupa toda a altura da grid cell */
 }
 
 .feature-card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 30px 60px rgba(139, 115, 85, 0.12);
+  box-shadow: 0 30px 60px rgba(139, 115, 85, 0.15);
   border-color: #8b7355;
 }
 
-/* ÍCONE */
+/* ÍCONES DETALHADOS COM GRADIENTE E EFEITO 3D */
 .feature-icon-wrapper {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  filter: drop-shadow(0 10px 15px rgba(139, 115, 85, 0.2));
 }
 
 .feature-icon {
-  width: 70px;
-  height: 70px;
-  background-color: #f4f1ea;
-  border-radius: 20px; /* Quadrado arredondado moderno */
+  width: 85px;
+  height: 85px;
+  /* Gradiente Bronze Luxuoso */
+  background: linear-gradient(135deg, #8b7355 0%, #b5a48b 100%);
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8b7355;
-  transition: all 0.4s ease;
+  color: #ffffff;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 2;
   position: relative;
+  /* Efeito de profundidade interna */
+  box-shadow: inset 0 -4px 6px rgba(0,0,0,0.1), 
+              inset 0 4px 6px rgba(255,255,255,0.2);
+}
+
+.feature-icon svg {
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
 .feature-card:hover .feature-icon {
-  background-color: #8b7355;
+  /* No hover, o ícone ganha um tom mais escuro e elegante */
+  background: linear-gradient(135deg, #222 0%, #444 100%);
+  transform: rotate(12deg) scale(1.1);
   color: #fff;
-  transform: rotate(10deg);
 }
 
+/* BACKDROP DO ÍCONE (Sombra decorativa) */
 .icon-backdrop {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 70px;
-  height: 70px;
-  background-color: rgba(139, 115, 85, 0.1);
-  border-radius: 20px;
+  top: 12px;
+  left: 12px;
+  width: 85px;
+  height: 85px;
+  background-color: #8b7355;
+  opacity: 0.15;
+  border-radius: 25px;
   z-index: 1;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .feature-card:hover .icon-backdrop {
-  transform: translate(-5px, -5px);
-  opacity: 0.5;
+  transform: translate(-10px, -10px) rotate(-5deg);
+  opacity: 0.35;
 }
 
-/* TEXTO */
+/* TEXTO E CONTEÚDO */
 .feature-title {
   font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: #111;
   margin-bottom: 15px;
 }
@@ -122,16 +139,18 @@
   font-size: 0.95rem;
   color: #666;
   line-height: 1.7;
+  flex-grow: 1; /* Faz o texto ocupar o espaço central para alinhar a decoração embaixo */
 }
 
 /* LINHA DECORATIVA ANIMADA */
 .feature-decoration {
-  width: 40px;
-  height: 2px;
+  width: 50px;
+  height: 3px;
   background: #f4f1ea;
-  margin-top: 25px;
+  margin-top: 30px;
   position: relative;
   overflow: hidden;
+  border-radius: 2px;
 }
 
 .decoration-line {
@@ -140,35 +159,33 @@
   height: 100%;
   background: #8b7355;
   left: -100%;
-  transition: 0.6s;
+  transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .feature-card:hover .decoration-line {
   left: 0;
 }
 
-/* RESPONSIVIDADE */
+/* VARIAÇÃO DE CORES POR CARD (OPCIONAL) */
+.feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, #a68b6d 0%, #d4c4b0 100%); }
+.feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, #6d5d4a 0%, #8b7355 100%); }
+
+/* ================= RESPONSIVIDADE ================= */
 @media (max-width: 768px) {
-  /* Reduz o espaço acima do título da seção */
   .features { 
-    padding: 40px 20px 60px 20px !important; 
+    padding: 60px 20px; 
   }
 
-  /* Se houver uma margem no topo do título, neutralize-a */
-  .features .section-title { 
+  .section-title { 
     font-size: 2.2rem;
-    margin-top: 0; 
-    margin-bottom: 20px;
   }
 
-  /* Otimiza o card para não ocupar tanto espaço vertical */
   .feature-card { 
-    padding: 30px 20px;
-    margin-bottom: 15px;
+    padding: 40px 25px;
   }
 
-  /* Ajuste específico para o texto subir */
-  .features-content {
-    margin-top: -20px; /* Puxa o conteúdo um pouco para cima */
+  .feature-icon {
+    width: 75px;
+    height: 75px;
   }
 }
